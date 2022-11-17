@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { serverTimestamp } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAAXziBRrDt9mVlGW7LN3_iaRjAunP5tSQ',
@@ -15,5 +16,6 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+export const timestamp = serverTimestamp();
 
 export default firebaseApp;
