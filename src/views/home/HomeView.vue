@@ -1,9 +1,6 @@
 <template>
-  <div>Home</div>
+  <BlogPost :post="welcomeScreen" />
+  <BlogPost :post="post" v-for="post in sampleBlogPosts" :key="post.id" />
 </template>
 
-<script>
-export default {
-  name: 'HomeView',
-};
-</script>
+<script src="./home.view.js"></script>
