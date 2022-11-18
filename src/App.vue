@@ -3,16 +3,18 @@
     <div class="app">
       <Navigation />
       <router-view />
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
-import { Navigation } from '@/components';
+import { Navigation, Footer } from '@/components';
 
 export default {
   name: 'app',
-  components: { Navigation },
+  // eslint-disable-next-line vue/no-reserved-component-names
+  components: { Navigation, Footer },
   data() {
     return {};
   },
