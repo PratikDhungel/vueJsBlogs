@@ -7,6 +7,8 @@ export default {
   name: 'Navigation',
   data() {
     return {
+      admin: false,
+      user: false,
       youTube,
       twitter,
       instagram,
