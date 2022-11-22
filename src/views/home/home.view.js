@@ -1,9 +1,11 @@
 import { BlogPost, BlogCard } from '@/components';
+import arrow from '../../assets/Icons/arrow-right-light.svg';
 
 export default {
   name: 'HomeView',
   data() {
     return {
+      arrow,
       welcomeScreen: {
         title: 'Welcome!',
         blogPost:
