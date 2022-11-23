@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
-      <Navigation />
+      <Navigation v-show="!disableNavigation" />
       <router-view />
-      <Footer />
+      <Footer v-show="!disableNavigation" />
     </div>
   </div>
 </template>
@@ -11,17 +11,33 @@
 <script>
 import { Navigation, Footer } from '@/components';
 
+const navDisabledViews = ['LoginView', 'RegisterView', 'ForgotPasswordView'];
+
 export default {
   name: 'app',
   // eslint-disable-next-line vue/no-reserved-component-names
   components: { Navigation, Footer },
   data() {
-    return {};
+    return {
+      disableNavigation: false,
+    };
   },
-  created() {},
+  created() {
+    this.checkRoute();
+  },
   mounted() {},
-  methods: {},
-  watch: {},
+  methods: {
+    checkRoute() {
+      if (navDisabledViews.includes(this.$route.name)) {
+        this.disableNavigation = true;
+      }
+    },
+  },
+  watch: {
+    $route() {
+      this.checkRoute();
+    },
+  },
 };
 </script>
 

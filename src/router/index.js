@@ -1,4 +1,10 @@
-import { HomeView, BlogsView } from '@/views';
+import {
+  HomeView,
+  BlogsView,
+  LoginView,
+  RegisterView,
+  ForgotPasswordView,
+} from '@/views';
 import { createWebHistory, createRouter } from 'vue-router';
 
 const routes = [
@@ -16,6 +22,30 @@ const routes = [
     component: BlogsView,
     meta: {
       title: 'Blogs',
+    },
+  },
+  {
+    path: '/login',
+    name: 'LoginView',
+    component: LoginView,
+    meta: {
+      title: 'Login',
+    },
+  },
+  {
+    path: '/register',
+    name: 'RegisterView',
+    component: RegisterView,
+    meta: {
+      title: 'Register',
+    },
+  },
+  {
+    path: '/forgot-password',
+    name: 'ForgotPasswordView',
+    component: ForgotPasswordView,
+    meta: {
+      title: 'Forgot Password',
     },
   },
 ];
