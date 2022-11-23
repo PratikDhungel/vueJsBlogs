@@ -1,4 +1,5 @@
-import arrow from '../../assets/Icons/arrow-right-light.svg';
+import arrow from '../../assets/Icons/arrow-right.svg';
+import arrowLight from '../../assets/Icons/arrow-right-light.svg';
 
 export default {
   name: 'BlogPost',
@@ -8,6 +9,7 @@ export default {
   data() {
     return {
       arrow,
+      arrowLight,
     };
   },
 };

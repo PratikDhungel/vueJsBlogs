@@ -6,7 +6,8 @@
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p v-else class="content-preview">{{ post.blogHTML }}</p>
         <router-link class="link link-light" v-if="post.welcomeScreen" to="#">
-          Login/Register <img :src="arrow" alt="arrow-icon" class="arrow arrow-light" />
+          Login/Register
+          <img :src="arrowLight" alt="arrow-icon" class="arrow arrow-light" />
         </router-link>
         <router-link class="link" v-else to="#">
           View The Post <img :src="arrow" alt="arrow-icon" class="arrow" />

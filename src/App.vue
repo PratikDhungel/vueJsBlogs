@@ -60,15 +60,18 @@ export default {
 .arrow {
   margin-left: 8px;
   width: 12px;
+
   path {
     fill: #000;
   }
 }
 
 .arrow-light {
-  path {
+  color: #fff;
+
+  /* path {
     fill: #fff;
-  }
+  } */
 }
 
 button,

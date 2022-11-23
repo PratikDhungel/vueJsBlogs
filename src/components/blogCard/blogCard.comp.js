@@ -1,4 +1,4 @@
-import arrow from '../../assets/Icons/arrow-right-light.svg';
+import arrow from '../../assets/Icons/arrow-right.svg';
 import edit from '../../assets/Icons/edit-regular.svg';
 import trash from '../../assets/Icons/trash-regular.svg';
 

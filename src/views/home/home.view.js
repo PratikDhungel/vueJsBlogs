@@ -1,5 +1,5 @@
 import { BlogPost, BlogCard } from '@/components';
-import arrow from '../../assets/Icons/arrow-right-light.svg';
+import arrow from '../../assets/Icons/arrow-right.svg';
 
 export default {
   name: 'HomeView',
