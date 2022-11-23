@@ -12,4 +12,9 @@ export default {
       trash,
     };
   },
+  computed: {
+    editPost() {
+      return this.$store.state.editPost;
+    },
+  },
 };
