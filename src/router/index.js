@@ -1,4 +1,4 @@
-import { HomeView } from '@/views';
+import { HomeView, BlogsView } from '@/views';
 import { createWebHistory, createRouter } from 'vue-router';
 
 const routes = [
@@ -6,6 +6,11 @@ const routes = [
     path: '/',
     name: 'HomeView',
     component: HomeView,
+  },
+  {
+    path: '/blogs',
+    name: 'BlogsView',
+    component: BlogsView,
   },
 ];
 
