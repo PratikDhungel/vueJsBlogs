@@ -9,6 +9,8 @@ export default {
       firstName: '',
       lastName: '',
       username: '',
+      email: '',
+      password: '',
       emailIcon,
       passwordIcon,
       userIcon,
