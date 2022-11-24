@@ -12,12 +12,12 @@
 
       <div class="inputs">
         <div class="input">
-          <input type="text" name="email" v-model="email" />
+          <input type="text" name="email" placeholder="Email" v-model="email" />
           <img :src="emailIcon" alt="email-icon" class="icon" />
         </div>
 
         <div class="input">
-          <input type="text" name="password" v-model="password" />
+          <input type="text" name="password" placeholder="Password" v-model="password" />
           <img :src="passwordIcon" alt="password-icon" class="icon" />
         </div>
       </div>
