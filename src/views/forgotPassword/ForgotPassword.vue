@@ -1,5 +1,7 @@
 <template>
   <div class="reset-password">
+    <Modal v-if="isModalOpen" @close-modal="handleCloseModal" />
+    <Loading v-if="isLoading" />
     <div class="form-wrap">
       <form class="reset">
         <p class="login-register">
