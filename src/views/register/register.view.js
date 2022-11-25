@@ -69,8 +69,8 @@ export default {
 
         // Redirect to home page after registration
         this.$router.push({ name: 'HomeView' });
-      } catch (err) {
-        console.log('Error occurred while registering user');
+      } catch (_) {
+        //
       }
     },
   },
