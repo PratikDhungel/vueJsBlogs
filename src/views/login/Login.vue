@@ -17,16 +17,23 @@
         </div>
 
         <div class="input">
-          <input type="text" name="password" placeholder="Password" v-model="password" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            v-model="password"
+          />
           <img :src="passwordIcon" alt="password-icon" class="icon" />
         </div>
+
+        <div v-show="isError" class="error">{{ errorMessage }}</div>
       </div>
 
       <router-link class="router-link" :to="{ name: 'ForgotPasswordView' }">
         Forgot your password?</router-link
       >
 
-      <button>Sign In</button>
+      <button @click.prevent="handleSignInUser">Sign In</button>
 
       <div class="angle"></div>
     </form>

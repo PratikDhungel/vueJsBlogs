@@ -148,6 +148,7 @@ button,
   text-align: center;
   color: red;
   font-size: 12px;
+  margin: 12px 0px;
 }
 
 .blog-card-wrap {

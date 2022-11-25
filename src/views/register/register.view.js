@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     async handleRegisterUser() {
+      // Check for form errors
       if (
         !this.firstName &&
         !this.lastName &&
@@ -36,6 +37,11 @@ export default {
         return;
       }
 
+      // Reset errors
+      this.isError = false;
+      this.errorMessage = '';
+
+      // Register new user to firebase
       const firebaseAuth = getAuth();
 
       try {
@@ -47,6 +53,7 @@ export default {
 
         const user = userCredential.user;
 
+        // Add user info to 'users' table
         const db = getFirestore(firebaseApp);
 
         const docRef = doc(db, 'users', user.uid);
@@ -60,6 +67,7 @@ export default {
 
         await setDoc(docRef, userData);
 
+        // Redirect to home page after registration
         this.$router.push({ name: 'HomeView' });
       } catch (err) {
         console.log('Error occurred while registering user');
