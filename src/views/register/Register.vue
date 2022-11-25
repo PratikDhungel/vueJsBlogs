@@ -35,12 +35,19 @@
         </div>
 
         <div class="input">
-          <input type="text" name="password" placeholder="Password" v-model="password" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            v-model="password"
+          />
           <img :src="passwordIcon" alt="password-icon" class="icon" />
         </div>
+
+        <div v-show="isError" class="error">{{ errorMessage }}</div>
       </div>
 
-      <button>Register</button>
+      <button @click.prevent="handleRegisterUser">Register</button>
 
       <div class="angle"></div>
     </form>
