@@ -30,7 +30,9 @@ export default {
     checkRoute() {
       if (navDisabledViews.includes(this.$route.name)) {
         this.disableNavigation = true;
+        return;
       }
+      this.disableNavigation = false;
     },
   },
   watch: {
