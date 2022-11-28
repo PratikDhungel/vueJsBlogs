@@ -10,6 +10,7 @@
 
 <script>
 import { Navigation, Footer } from '@/components';
+import { getAuth } from 'firebase/auth';
 
 const navDisabledViews = ['LoginView', 'RegisterView', 'ForgotPasswordView'];
 
@@ -23,6 +24,14 @@ export default {
     };
   },
   created() {
+    getAuth().onAuthStateChanged((user) => {
+      this.$store.commit('setUser', user);
+
+      if (user) {
+        this.$store.dispatch('getCurrentUser');
+      }
+    });
+
     this.checkRoute();
   },
   mounted() {},
