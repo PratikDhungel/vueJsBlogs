@@ -4,15 +4,19 @@ import instagram from '../../assets/Icons/instagram-brands.svg';
 import linkedin from '../../assets/Icons/linkedin-brands.svg';
 
 export default {
-  name: 'Navigation',
+  name: 'Footer',
   data() {
     return {
       admin: false,
-      user: false,
       youTube,
       twitter,
       instagram,
       linkedin,
     };
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
   },
 };

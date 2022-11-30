@@ -25,7 +25,7 @@
           <ul>
             <router-link class="link" :to="{ name: 'HomeView' }">Home</router-link>
             <router-link class="link" :to="{ name: 'BlogsView' }">Blogs</router-link>
-            <router-link v-if="admin" class="link" to="#">Create Post</router-link>
+            <router-link class="link" to="#">Create Post</router-link>
             <router-link v-if="!user" class="link" :to="{ name: 'LoginView' }"
               >Login In/Register</router-link
             >

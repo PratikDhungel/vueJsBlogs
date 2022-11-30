@@ -1,11 +1,11 @@
 import { BlogPost, BlogCard } from '@/components';
-import arrow from '../../assets/Icons/arrow-right.svg';
+import arrowLight from '../../assets/Icons/arrow-right-light.svg';
 
 export default {
   name: 'HomeView',
   data() {
     return {
-      arrow,
+      arrowLight,
       welcomeScreen: {
         title: 'Welcome!',
         blogPost:
@@ -36,6 +36,9 @@ export default {
   computed: {
     sampleBlogCards() {
       return this.$store.state.sampleBlogCards;
+    },
+    user() {
+      return this.$store.state.user;
     },
   },
 };
