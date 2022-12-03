@@ -30,14 +30,14 @@
 
             <div class="options">
               <div class="option">
-                <router-link to="#" class="option">
+                <router-link :to="{ name: 'ProfileView' }" class="option">
                   <img :src="userIcon" alt="user-icon" class="icon" />
                   <p>Profile</p>
                 </router-link>
               </div>
 
               <div class="option">
-                <router-link to="#" class="option">
+                <router-link :to="{ name: 'AdminView' }" class="option">
                   <img :src="adminIcon" alt="admin-icon" class="icon" />
                   <p>Admin</p>
                 </router-link>

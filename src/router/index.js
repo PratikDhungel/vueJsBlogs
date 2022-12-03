@@ -4,6 +4,8 @@ import {
   LoginView,
   RegisterView,
   ForgotPasswordView,
+  ProfileView,
+  AdminView,
 } from '@/views';
 import { createWebHistory, createRouter } from 'vue-router';
 
@@ -46,6 +48,22 @@ const routes = [
     component: ForgotPasswordView,
     meta: {
       title: 'Forgot Password',
+    },
+  },
+  {
+    path: '/profile',
+    name: 'ProfileView',
+    component: ProfileView,
+    meta: {
+      title: 'Profile',
+    },
+  },
+  {
+    path: '/admin',
+    name: 'AdminView',
+    component: AdminView,
+    meta: {
+      title: 'Admin',
     },
   },
 ];

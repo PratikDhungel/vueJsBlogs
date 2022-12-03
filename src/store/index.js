@@ -1,6 +1,6 @@
 import { createStore } from 'vuex';
 import { getAuth } from 'firebase/auth';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
 import firebaseApp from '@/firebase/firebaseInit';
 
 export default createStore({
@@ -48,20 +48,18 @@ export default createStore({
       state.user = payload;
     },
     setProfileInfo(state, userInfo) {
-      const firstName = userInfo.data().firstName;
-      const lastName = userInfo.data().lastName;
-
-      const firstNameInitials = firstName?.split('')?.[0]?.toUpperCase() || '';
-      const lastNameInitials = lastName?.split('')?.[0]?.toUpperCase() || '';
-
-      const profileInitials = firstNameInitials + lastNameInitials;
-
-      state.profileId = userInfo;
+      state.profileId = userInfo.id;
       state.profileEmail = userInfo.data().email;
-      state.profileFirstName = firstName;
-      state.profileLastName = lastName;
+      state.profileFirstName = userInfo.data().firstName;
+      state.profileLastName = userInfo.data().lastName;
       state.profileUsername = userInfo.data().username;
-      state.profileInitials = profileInitials;
+    },
+    setProfileInitials(state) {
+      const firstNameInitials =
+        state.profileFirstName?.split('')?.[0]?.toUpperCase() || '';
+      const lastNameInitials = state.profileLastName?.split('')?.[0]?.toUpperCase() || '';
+
+      state.profileInitials = firstNameInitials + lastNameInitials;
     },
   },
   actions: {
@@ -77,6 +75,15 @@ export default createStore({
       const userInfo = await getDoc(docRef);
 
       commit('setProfileInfo', userInfo);
+      commit('setProfileInitials');
+    },
+    async updateUserProfile({ commit, state }, payload) {
+      const db = getFirestore(firebaseApp);
+
+      const docRef = doc(db, 'users', state.profileId);
+
+      await updateDoc(docRef, payload);
+      commit('setProfileInitials');
     },
   },
 });
